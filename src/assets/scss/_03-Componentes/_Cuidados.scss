@@ -1,0 +1,318 @@
+/* ESTILOS BASE DEL COMPONENTE */
+.cuidados-page {
+  font-family: 'Raleway', sans-serif; /* Fuente principal consistente */
+  color: #2e7d32; /* Color verde oscuro para texto */
+  max-width: 100%; /* Asegura que no exceda el ancho */
+  overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+/* HERO SECTION - Encabezado visual */
+.hero-cuidados {
+  position: relative; /* Para posicionar elementos hijos */
+  height: 50vh; /* Altura inicial para móvil */
+  min-height: 400px; /* Altura mínima */
+  background: url('/img/hero-cuidados.jpg') no-repeat center center; /* Imagen de fondo */
+  background-size: cover; /* Cubre todo el espacio */
+  display: flex; /* Flex para centrar contenido */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  text-align: center; /* Alineación de texto */
+  
+  /* Overlay semi-transparente */
+  &::before {
+    content: ''; /* Necesario para pseudoelemento */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 0; left: 0; /* Desde esquina superior izquierda */
+    width: 100%; height: 100%; /* Tamaño completo */
+    background: rgba(27, 94, 32, 0.7); /* Verde con transparencia */
+  }
+}
+
+/* Contenido del hero */
+.hero-overlay {
+  position: relative; /* Posicionamiento relativo */
+  z-index: 1; /* Por encima del overlay */
+  color: white; /* Texto blanco */
+  max-width: 800px; /* Ancho máximo */
+  padding: 0 1rem; /* Padding lateral móvil */
+  
+  /* Título principal */
+  h1 {
+    font-size: 2.5rem; /* Tamaño móvil */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    font-weight: 700; /* Negrita */
+    line-height: 1.2; /* Interlineado */
+  }
+  
+  /* Subtítulo */
+  p {
+    font-size: 1.3rem; /* Tamaño móvil */
+    color: #e8f5e9; /* Verde muy claro */
+    margin-bottom: 0; /* Sin margen inferior */
+  }
+}
+
+/* FILTROS POR CATEGORÍA */
+.filtros {
+  display: flex; /* Disposición en fila */
+  flex-wrap: wrap; /* Permite múltiples líneas */
+  gap: 0.8rem; /* Espacio entre elementos */
+  margin: 2rem auto; /* Margen superior e inferior, centrado */
+  justify-content: center; /* Centrado horizontal */
+  max-width: 95%; /* Ancho máximo */
+}
+
+/* Botones de filtro */
+.filtro-btn {
+  background: white; /* Fondo blanco */
+  border: 1px solid #c8e6c9; /* Borde verde claro */
+  color: #2e7d32; /* Texto verde oscuro */
+  padding: 0.6rem 1.5rem; /* Relleno interno */
+  border-radius: 30px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor pointer */
+  transition: all 0.3s ease; /* Transición suave */
+  font-weight: 600; /* Negrita */
+  display: flex; /* Flex para alinear icono y texto */
+  align-items: center; /* Centrado vertical */
+  gap: 8px; /* Espacio entre icono y texto */
+  
+  /* Efecto hover */
+  &:hover {
+    background: #e8f5e9; /* Fondo verde muy claro */
+  }
+  
+  /* Estado activo */
+  &.active {
+    background: #2e7d32; /* Fondo verde oscuro */
+    color: white; /* Texto blanco */
+    border-color: #2e7d32; /* Borde verde oscuro */
+  }
+  
+  /* Iconos dentro del botón */
+  svg {
+    font-size: 1.1rem; /* Tamaño consistente */
+  }
+}
+
+/* GRID DE GUÍAS */
+.guias-grid {
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(1, 1fr); /* 1 columna en móvil */
+  gap: 2rem; /* Espacio entre elementos */
+  margin: 2rem auto; /* Margen superior e inferior, centrado */
+  padding: 0 1rem; /* Padding lateral móvil */
+  max-width: 1200px; /* Ancho máximo */
+}
+
+/* TARJETAS DE GUÍAS */
+.guia-card {
+  background: white; /* Fondo blanco */
+  border-radius: 12px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta exceso */
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1); /* Sombra sutil verde */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* SLIDER DE IMÁGENES */
+.guia-slider {
+  height: 300px; /* Altura fija */
+  width: 100%; /* Ancho completo */
+  
+  /* Contenedor de cada imagen */
+  .slider-image {
+    height: 300px; /* Misma altura que slider */
+    
+    /* Imagen dentro del slider */
+    img {
+      width: 100%; /* Ancho completo */
+      height: 100%; /* Alto completo */
+      object-fit: cover; /* Cubre espacio manteniendo relación */
+    }
+  }
+  
+  /* Flechas de navegación */
+  .slick-arrow {
+    position: absolute; /* Posicionamiento absoluto */
+    top: 50%; /* Centrado vertical */
+    transform: translateY(-50%); /* Ajuste fino */
+    z-index: 1; /* Por encima de imágenes */
+    background: rgba(46, 125, 50, 0.7); /* Fondo semitransparente */
+    color: white; /* Icono blanco */
+    width: 40px; height: 40px; /* Tamaño */
+    border-radius: 50%; /* Forma circular */
+    display: flex; /* Flex para centrar */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    cursor: pointer; /* Cursor pointer */
+    transition: all 0.3s ease; /* Transición suave */
+    border: none; /* Sin borde */
+    
+    /* Efecto hover */
+    &:hover {
+      background: #2e7d32; /* Fondo verde sólido */
+    }
+  }
+  
+  /* Flecha anterior */
+  .slick-prev {
+    left: 15px; /* Posición desde izquierda */
+  }
+  
+  /* Flecha siguiente */
+  .slick-next {
+    right: 15px; /* Posición desde derecha */
+  }
+  
+  /* Puntos de navegación */
+  .slick-dots {
+    bottom: 15px; /* Posición desde abajo */
+    
+    /* Puntos inactivos */
+    li button:before {
+      color: white; /* Color blanco */
+      opacity: 0.7; /* Ligera transparencia */
+    }
+    
+    /* Punto activo */
+    li.slick-active button:before {
+      color: #c8e6c9; /* Verde claro */
+      opacity: 1; /* Sin transparencia */
+    }
+  }
+}
+
+/* INFORMACIÓN DE LA GUÍA */
+.guia-info {
+  padding: 1.5rem; /* Relleno interno */
+  
+  /* Título de la guía */
+  h3 {
+    color: #1b5e20; /* Verde oscuro */
+    font-size: 1.5rem; /* Tamaño móvil */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+    font-weight: 700; /* Negrita */
+  }
+  
+  /* Metainformación (dificultad y categoría) */
+  .meta-info {
+    display: flex; /* Disposición en fila */
+    gap: 1rem; /* Espacio entre elementos */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    flex-wrap: wrap; /* Permite múltiples líneas */
+    
+    /* Elementos de metainfo */
+    span {
+      font-size: 0.9rem; /* Tamaño pequeño */
+      padding: 0.3rem 0.8rem; /* Relleno interno */
+      border-radius: 20px; /* Bordes muy redondeados */
+      display: flex; /* Flex para alinear icono y texto */
+      align-items: center; /* Centrado vertical */
+      gap: 5px; /* Espacio entre icono y texto */
+    }
+      
+    /* Dificultad */
+    .dificultad {
+      background: #e8f5e9; /* Fondo verde muy claro */
+      color: #1b5e20; /* Texto verde oscuro */
+      font-weight: 600; /* Negrita */
+    }
+      
+    /* Categoría */
+    .categoria {
+      background: #f1f8e9; /* Fondo verde claro */
+      color: #2e7d32; /* Texto verde */
+      text-transform: capitalize; /* Primera letra mayúscula */
+      font-weight: 500; /* Seminegrita */
+    }
+  }
+  
+  /* Descripción */
+  p {
+    color: #495057; /* Gris oscuro */
+    line-height: 1.6; /* Interlineado */
+    margin-bottom: 1.5rem; /* Espaciado inferior */
+  }
+}
+
+/* LISTA DE CONSEJOS */
+.consejos-list {
+  margin-top: 1.5rem; /* Espaciado superior */
+  
+  /* Título "Consejos clave" */
+  h4 {
+    color: #1b5e20; /* Verde oscuro */
+    margin-bottom: 0.8rem; /* Espaciado inferior */
+    font-size: 1.1rem; /* Tamaño */
+    font-weight: 600; /* Negrita */
+  }
+  
+  /* Lista no ordenada */
+  ul {
+    list-style: none; /* Sin viñetas */
+    padding-left: 0; /* Sin padding izquierdo */
+    
+    /* Elementos de lista */
+    li {
+      margin-bottom: 0.5rem; /* Espaciado inferior */
+      display: flex; /* Flex para alinear icono y texto */
+      align-items: flex-start; /* Alineación superior */
+      
+      /* Icono de check */
+      .check-icon {
+        color: #4caf50; /* Verde */
+        margin-right: 0.5rem; /* Espacio a la derecha */
+        margin-top: 0.2rem; /* Ajuste fino */
+        flex-shrink: 0; /* Evita que se encoja */
+      }
+    }
+  }
+}
+
+/* RESPONSIVE - TABLET (768px) */
+@media (min-width: 768px) {
+  /* Grid de 2 columnas */
+  .guias-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Ajuste altura hero */
+  .hero-cuidados {
+    height: 60vh;
+    
+    /* Tamaño de título */
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  /* Ajuste botones filtro */
+  .filtro-btn {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+  }
+  
+  /* Ajuste padding general */
+  .hero-overlay, 
+  .guias-grid {
+    padding: 0 2rem;
+  }
+}
+
+/* RESPONSIVE - ESCRITORIO (1024px) */
+@media (min-width: 1024px) {
+  /* Grid de 3 columnas */
+  .guias-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem; /* Más espacio entre elementos */
+  }
+  
+  /* Tamaño título hero */
+  .hero-cuidados h1 {
+    font-size: 3.5rem;
+  }
+  
+  /* Más padding en escritorio */
+  .hero-overlay {
+    padding: 0 3rem;
+  }
+}

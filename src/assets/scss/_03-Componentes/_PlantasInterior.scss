@@ -1,0 +1,152 @@
+/* ESTILOS PRINCIPALES DEL COMPONENTE */
+.plantas-interior-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    h1 {
+      color: #1b5e20; /* Verde oscuro */
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 15px;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background-color: #4caf50; /* Verde claro */
+      }
+    }
+    
+    .intro-text {
+      font-size: 1.1rem;
+      color: #495057;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  /* ESTILOS DE LAS TARJETAS DE PLANTAS */
+  .planta-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f8f9fa;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(67, 160, 71, 0.15);
+    }
+    
+    .planta-imagen {
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 2px solid #e8f5e9;
+    }
+    
+    .card-title {
+      color: #2e7d32; /* Verde oscuro */
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .card-subtitle {
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+    
+    .card-text {
+      font-size: 0.95rem;
+      color: #6c757d;
+    }
+    
+    .precio {
+      font-weight: 700;
+      color: #1b5e20;
+      font-size: 1.1rem;
+    }
+    
+    .btn-comprar {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+      
+      &:hover {
+        background-color: #388e3c;
+      }
+    }
+  }
+  
+  /* ESTILOS DE LA SECCIÓN DE CONSEJOS */
+  .tips-cuidados {
+    background-color: #e8f5e9; /* Fondo verde muy claro */
+    border-radius: 12px;
+    
+    h2 {
+      color: #1b5e20;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    
+    ol {
+      padding-left: 20px;
+      
+      li {
+        margin-bottom: 10px;
+        padding-left: 30px;
+        position: relative;
+        color: #495057;
+        
+        &::before {
+          content: "🌿";
+          position: absolute;
+          left: 0;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .plantas-interior-container {
+      padding: 0 15px;
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+    
+    .planta-card {
+      .planta-imagen {
+        height: 200px;
+      }
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .plantas-interior-container {
+      .intro-text {
+        font-size: 1.2rem;
+      }
+    }
+    
+    .planta-card {
+      .card-title {
+        font-size: 1.2rem;
+      }
+      
+      .card-text {
+        font-size: 1rem;
+      }
+    }
+  }

@@ -1,0 +1,171 @@
+/* ESTILOS GENERALES Y RESET */
+* {
+  box-sizing: border-box; /* Modelo de caja consistente */
+}
+
+html, body {
+  max-width: 100%; /* Evitar desbordamiento horizontal */
+  overflow-x: hidden;
+}
+
+// ANIMACIÓN DE FONDO CON HOJAS
+@keyframes backgroundFade {
+  0% {
+    background-color: #f8f9fa;
+  }
+  50% {
+    background-color: #e8f5e9;
+  }
+  100% {
+    background-color: #f8f9fa;
+  }
+}
+
+/* ESTILOS DEL BODY - TEMA PRINCIPAL */
+body {
+  background-color: #f8f9fa; /* Fondo claro */
+  font-family: 'Raleway', sans-serif; /* Tipografía principal */
+  animation: backgroundFade 30s infinite alternate ease-in-out; /* Animación sutil de fondo */
+  padding-top: 100px; /* Espacio para el header fixed */
+  
+  /* Ajuste para móviles */
+  @media (max-width: 768px) {
+    padding-top: 80px;
+  }
+  
+  /* Tablet */
+  @media (min-width: 768px) {
+    padding-top: 110px;
+  }
+  
+  /* Escritorio */
+  @media (min-width: 1024px) {
+    padding-top: 25px;
+  }
+}
+
+/* CONTENEDOR PRINCIPAL */
+.main-content-wrapper {
+  padding-top: 20px;
+  
+  @media (min-width: 768px) {
+    padding-top: 30px;
+  }
+  
+  @media (min-width: 1024px) {
+    padding-top: 40px;
+  }
+}
+
+/* ESTILOS DE TIPOGRAFÍA */
+p {
+  color: #495057; /* Gris oscuro para mejor legibilidad */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #2e7d32; /* Verde oscuro */
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  color: #388e3c; /* Verde medio */
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+}
+
+h3 {
+  color: #43a047; /* Verde */
+  font-size: 1.4rem;
+}
+
+h4 {
+  color: #4caf50; /* Verde claro */
+  font-size: 1.2rem;
+}
+
+h5 {
+  color: #2e7d32; /* Verde oscuro */
+  font-size: 1rem;
+}
+
+h6 {
+  color: #1b5e20; /* Verde muy oscuro */
+  font-size: 0.8rem;
+}
+
+/* ESTILOS DE LISTAS */
+li {
+  list-style-type: none;
+}
+
+ol {
+  list-style-type: none;
+  padding-left: 0;
+  
+  li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    
+    &::before {
+      content: "🌱"; /* Icono de planta */
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+/* ESTILOS DE ENLACES */
+a {
+  /* Enlace sin visitar */
+  &:link {
+    color: #2e7d32; /* Verde oscuro */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  /* Enlace visitado */
+  &:visited {
+    color: #1b5e20; /* Verde más oscuro */
+  }
+  
+  /* Efecto hover */
+  &:hover {
+    color: #43a047; /* Verde más claro */
+    text-decoration: underline;
+  }
+}
+
+/* AJUSTE ESPECÍFICO PARA EL SLIDER EN HOME */
+.galeria-plantas {
+  margin-top: -100px; /* Compensa el padding del body */
+  
+  @media (max-width: 768px) {
+    margin-top: -80px;
+  }
+  
+  @media (min-width: 1024px) {
+    margin-top: -120px;
+  }
+}
+
+/* ESTILOS ADICIONALES PARA EL VIVERO */
+.leaf-icon {
+  color: #4caf50; /* Verde claro para íconos */
+  margin-right: 8px;
+}
+
+.natural-shadow {
+  box-shadow: 0 4px 8px rgba(67, 160, 71, 0.2); /* Sombra verde suave */
+}
+
+.rounded-corners {
+  border-radius: 12px; /* Bordes redondeados naturales */
+}

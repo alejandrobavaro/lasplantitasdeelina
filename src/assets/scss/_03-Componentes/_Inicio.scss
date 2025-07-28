@@ -1,0 +1,503 @@
+/* ESTILOS GENERALES */
+.main-content {
+  font-family: 'Raleway', sans-serif;
+  color: #2e7d32;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #1b5e20;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  position: relative;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #4caf50;
+  }
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #388e3c;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  
+  &:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(46, 125, 50, 0.3);
+  }
+  
+  .icon-right {
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover .icon-right {
+    transform: translateX(3px);
+  }
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  background: url('/img/hero-plantas.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(27, 94, 32, 0.6);
+  }
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 1rem;
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    
+    span {
+      color: #c8e6c9;
+    }
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #e8f5e9;
+  }
+}
+
+/* PLANTAS DESTACADAS */
+.plantas-destacadas {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.planta-item {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1);
+  margin: 0 0.5rem;
+}
+
+.planta-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  
+  .gallery-img-container {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-bottom: 2px solid #c8e6c9;
+    }
+  }
+}
+
+.planta-info {
+  padding: 1.5rem;
+  
+  h3 {
+    color: #1b5e20;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .descripcion {
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.cuidados-list {
+  margin-bottom: 1.5rem;
+  
+  h4 {
+    color: #2e7d32;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  ul {
+    list-style: none;
+    
+    li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: flex-start;
+      
+      .check-icon {
+        color: #4caf50;
+        margin-right: 0.5rem;
+        margin-top: 0.2rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.btn-details {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  &:hover {
+    background: #388e3c;
+    
+    .icon-right {
+      transform: translateX(3px);
+    }
+  }
+  
+  .icon-right {
+    transition: transform 0.3s ease;
+  }
+}
+
+/* SERVICIOS SECTION */
+.servicios-section {
+  padding: 4rem 0;
+  background-color: #e8f5e9;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.servicio-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(46, 125, 50, 0.15);
+  }
+  
+  .servicio-icon {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    color: #1b5e20;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  
+  p {
+    color: #495057;
+    line-height: 1.6;
+  }
+}
+
+/* GUIA SECTION */
+.guia-section {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.guia-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.guia-text {
+  h2 {
+    font-size: 2rem;
+    color: #1b5e20;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  > p {
+    color: #388e3c;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.pasos-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.paso-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.1);
+  border-left: 4px solid #4caf50;
+  
+  .paso-number {
+    background: #2e7d32;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  
+  h4 {
+    color: #1b5e20;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  p {
+    color: #495057;
+    line-height: 1.6;
+  }
+}
+
+.guia-image {
+  margin-top: 2rem;
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1);
+  }
+}
+
+/* CTA SECTION */
+.cta-section {
+  padding: 4rem 1rem;
+  background: url('/img/cta-plantas.jpg') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(27, 94, 32, 0.8);
+  }
+  
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #e8f5e9;
+  }
+}
+
+/* SLIDER STYLES */
+.slick-dots {
+  bottom: -40px;
+  
+  li button:before {
+    color: #c8e6c9;
+    font-size: 10px;
+  }
+  
+  li.slick-active button:before {
+    color: #2e7d32;
+  }
+}
+
+/* RESPONSIVE STYLES */
+@media (min-width: 768px) {
+  .hero-section {
+    height: 80vh;
+    
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  .planta-item {
+    flex-direction: row;
+    height: 400px;
+  }
+  
+  .planta-gallery {
+    flex: 0 0 50%;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    
+    .gallery-img-container {
+      flex: 0 0 auto;
+      height: 100%;
+      
+      img {
+        height: 100%;
+        border-bottom: none;
+        border-right: 2px solid #c8e6c9;
+      }
+    }
+  }
+  
+  .planta-info {
+    flex: 0 0 50%;
+    padding: 2rem;
+  }
+  
+  .servicios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .guia-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .guia-text {
+    flex: 0 0 50%;
+    
+    h2, p {
+      text-align: left;
+    }
+    
+    p {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  
+  .guia-image {
+    flex: 0 0 50%;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    h1 {
+      font-size: 3.5rem;
+    }
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .planta-gallery {
+    flex: 0 0 60%;
+  }
+  
+  .planta-info {
+    flex: 0 0 40%;
+  }
+  
+  .pasos-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

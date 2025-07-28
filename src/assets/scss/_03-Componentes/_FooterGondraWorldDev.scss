@@ -1,0 +1,131 @@
+/* Estilos base - Mobile First */
+.plant-footer {
+  width: 100%;
+  background-color: #1b5e20; /* Verde oscuro */
+  color: #c8e6c9; /* Verde claro */
+  padding: 1.5rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.nature-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  
+  .leaf-icon {
+    color: #a5d6a7;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    
+    &.flipped {
+      transform: rotate(90deg);
+    }
+  }
+  
+  .vine-line {
+    height: 2px;
+    width: 100px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      #a5d6a7, 
+      transparent);
+  }
+}
+
+.plant-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.plant-branding {
+  font-size: 0.9rem;
+  font-family: 'Raleway', sans-serif;
+  
+  .grown-with {
+    opacity: 0.8;
+  }
+  
+  .developer-link {
+    color: #e8f5e9;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  }
+}
+
+.plant-social {
+  display: flex;
+  gap: 1.5rem;
+  
+  .social-icon {
+    color: #a5d6a7;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: #ffffff;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+/* Tablet (768px) */
+@media (min-width: 768px) {
+  .nature-divider {
+    .leaf-icon {
+      font-size: 1.8rem;
+    }
+    
+    .vine-line {
+      width: 150px;
+    }
+  }
+  
+  .plant-content {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .plant-branding {
+    font-size: 1rem;
+  }
+  
+  .plant-social {
+    gap: 2rem;
+    
+    .social-icon {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+  .plant-footer {
+    padding: 2rem 1rem;
+  }
+  
+  .nature-divider {
+    margin-bottom: 2rem;
+    
+    .leaf-icon {
+      font-size: 2rem;
+    }
+    
+    .vine-line {
+      width: 200px;
+    }
+  }
+}
